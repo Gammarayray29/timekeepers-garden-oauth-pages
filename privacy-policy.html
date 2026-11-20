@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Timekeeper's Garden Artwork Sync</title>
+  <style>body{font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;max-width:760px;margin:3rem auto;padding:0 1.25rem;color:#222}h1,h2{line-height:1.25}a{overflow-wrap:anywhere}</style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p><strong>Timekeeper's Garden Artwork Sync</strong><br>Last updated: November 19, 2026</p>
+  <h2>What this application does</h2>
+  <p>Timekeeper's Garden Artwork Sync is an automation for the Timekeeper's Garden project. It copies PNG artwork files stored in the project's GitHub repository to a designated folder in the project owner's Google Drive.</p>
+  <h2>Google Drive access</h2>
+  <p>The application uses Google OAuth and currently requests the Google Drive scope <code>https://www.googleapis.com/auth/drive</code>. This is a broad permission that can allow access to Drive files. The synchronization script uses it to find the configured artwork folders, upload PNG files, and move replaced older copies into an Archive folder. Files removed from GitHub are not automatically deleted from Drive.</p>
+  <h2>Information processed</h2>
+  <p>The automation processes PNG artwork and related file information, including file names and Drive file identifiers. OAuth credentials are used to obtain access to Drive. The refresh token, client ID, and client secret are stored as GitHub Actions repository secrets and should not be committed to source files or exposed in logs.</p>
+  <h2>Where processing happens</h2>
+  <p>Synchronization runs in GitHub Actions. GitHub checks out the repository and runs the synchronization script in a hosted workflow environment. Google Drive receives the artwork uploaded by the workflow. GitHub and Google process data under their own terms and privacy policies.</p>
+  <h2>Purpose and sharing</h2>
+  <p>This application is intended for the project owner's artwork synchronization and is not a general public file-hosting service. It is not designed to sell personal information or use Drive content for advertising.</p>
+  <h2>Data retention and control</h2>
+  <p>Files uploaded to Google Drive remain there unless the Drive owner deletes them. Replaced artwork is moved to the Archive folder when the workflow completes that operation. Removing a PNG from GitHub does not automatically remove its Drive copy. The Drive owner can manage files in Google Drive and revoke the application's access through Google Account security settings.</p>
+  <h2>Security</h2>
+  <p>OAuth credentials are intended to be kept in GitHub Actions repository secrets and not committed to this public repository. The project owner should restrict repository access and revoke and replace credentials if they may have been exposed.</p>
+  <h2>Changes to this policy</h2>
+  <p>This policy may be updated if the application's behavior or data handling changes. The revision date above will be updated when changes are made.</p>
+  <h2>Contact</h2>
+  <p>For questions about this application or this policy, use the developer contact information shown on the Google OAuth consent screen. Do not post OAuth tokens, passwords, or private artwork in public issue reports.</p>
+</body>
+</html>
